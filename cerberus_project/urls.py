@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app_cerberus.views import *
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -24,5 +25,6 @@ from rest_framework_simplejwt.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('token/', TokenObtainPairView.as_view()),
-    path('refresh/', TokenRefreshView.as_view())
+    path('refresh/', TokenRefreshView.as_view()),
+    path('create-user/', create_user),
 ]
